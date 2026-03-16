@@ -26,6 +26,23 @@
         </ul>
       </nav>
       <a class="btn btn-gold inquiry-btn" href="#supplier-inquiry">Supplier Inquiry</a>
+      <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-label="Open navigation menu" aria-controls="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="container mobile-menu-wrap">
+      <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile Navigation" hidden>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#business-standards">Business Standards</a></li>
+          <li><a href="#supplier-inquiry">Supplier Inquiry</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a class="btn btn-gold mobile-menu-cta" href="#supplier-inquiry">Submit Supplier Inquiry</a>
+      </nav>
     </div>
   </header>
 
@@ -342,5 +359,52 @@
       </div>
     </div>
   </footer>
+  <script>
+    (function () {
+      var header = document.querySelector(".site-header");
+      if (!header) return;
+
+      var toggle = header.querySelector(".mobile-nav-toggle");
+      var menu = header.querySelector(".mobile-menu");
+      if (!toggle || !menu) return;
+
+      function closeMenu() {
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Open navigation menu");
+        menu.classList.remove("is-open");
+        menu.hidden = true;
+      }
+
+      function openMenu() {
+        toggle.setAttribute("aria-expanded", "true");
+        toggle.setAttribute("aria-label", "Close navigation menu");
+        menu.hidden = false;
+        requestAnimationFrame(function () {
+          menu.classList.add("is-open");
+        });
+      }
+
+      toggle.addEventListener("click", function () {
+        var isExpanded = toggle.getAttribute("aria-expanded") === "true";
+        if (isExpanded) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+
+      menu.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", closeMenu);
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") closeMenu();
+      });
+
+      window.addEventListener("resize", function () {
+        if (!window.matchMedia("(max-width: 768px)").matches) closeMenu();
+      });
+    })();
+  </script>
 </body>
 </html>
