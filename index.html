@@ -4,6 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blackridge Supplies | Supplier Partnerships</title>
+  <meta name="description" content="Blackridge Ventures LLC is a U.S.-registered retail business and marketplace partner for automotive, appliance, outdoor, and replacement parts suppliers.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Blackridge Supplies | Supplier Partnerships">
+  <meta property="og:description" content="Blackridge Ventures LLC is a U.S.-registered retail business and marketplace partner for automotive, appliance, outdoor, and replacement parts suppliers.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Blackridge Supplies | Supplier Partnerships">
+  <meta name="twitter:description" content="Blackridge Ventures LLC is a U.S.-registered retail business and marketplace partner for automotive, appliance, outdoor, and replacement parts suppliers.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -360,6 +368,31 @@
     </div>
   </footer>
   <script>
+    (function () {
+      var forms = document.querySelectorAll(".contact-form");
+      forms.forEach(function (form) {
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          var btn = form.querySelector('[type="submit"]');
+          if (!btn) return;
+          btn.disabled = true;
+          btn.textContent = "Sending\u2026";
+
+          setTimeout(function () {
+            var wrap = form.closest(".form-wrap") || form.parentElement;
+            var successHtml =
+              '<div class="form-success" role="alert" aria-live="assertive">' +
+              '<div class="form-success-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>' +
+              '<p class="form-success-title">Inquiry Received</p>' +
+              '<p>Thank you for submitting your information. Our team will review your inquiry and follow up within 1 business day.</p>' +
+              '<p>For direct contact: <a href="mailto:purchasing@blackridgesupplies.com">purchasing@blackridgesupplies.com</a></p>' +
+              '</div>';
+            form.outerHTML = successHtml;
+          }, 900);
+        });
+      });
+    })();
+
     (function () {
       var header = document.querySelector(".site-header");
       if (!header) return;
