@@ -268,7 +268,9 @@ a, button, input, select, textarea, .card, .btn {
 .hero-home {
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  padding-top: 120px;
+  padding-bottom: 80px;
   background:
     repeating-linear-gradient(
       45deg,
@@ -348,6 +350,13 @@ a, button, input, select, textarea, .card, .btn {
   padding: 6px 14px;
 }
 
+.hero-location {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
 .hero-actions {
   margin-top: 2.25rem;
   display: flex;
@@ -359,6 +368,21 @@ a, button, input, select, textarea, .card, .btn {
 .hero-actions .btn {
   padding: 14px 32px;
   font-size: 0.9375rem;
+  min-width: 220px;
+  text-align: center;
+  justify-content: center;
+}
+
+.hero-actions .btn-gold {
+  background: var(--gold);
+  color: var(--navy);
+  border: none;
+}
+
+.hero-actions .btn-light {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 /* ============================================================
@@ -1011,7 +1035,7 @@ a, button, input, select, textarea, .card, .btn {
 .footer-links a {
   font-family: "DM Sans", system-ui, sans-serif;
   font-size: 0.8125rem;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.5);
   transition: var(--transition);
 }
 
@@ -1022,13 +1046,13 @@ a, button, input, select, textarea, .card, .btn {
 .footer-text {
   font-family: "DM Sans", system-ui, sans-serif;
   font-size: 0.8125rem;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.6);
   margin-bottom: 0.5rem;
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
 .footer-text a {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.7);
   transition: var(--transition);
 }
 
@@ -1040,9 +1064,25 @@ a, button, input, select, textarea, .card, .btn {
   padding: 16px 0;
   font-family: "DM Sans", system-ui, sans-serif;
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.25);
-  text-align: center;
+  color: rgba(255, 255, 255, 0.4);
 }
+
+.footer-bottom-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.footer-legal-links a {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0 12px;
+  transition: var(--transition);
+}
+
+.footer-legal-links a:hover { color: rgba(255, 255, 255, 0.8); }
 
 /* ============================================================
    TEXT UTILITIES
@@ -1138,6 +1178,12 @@ a, button, input, select, textarea, .card, .btn {
 
   .logo-subtitle { font-size: 0.5625rem; }
 
+  .hero-home {
+    padding-top: 80px;
+    padding-bottom: 60px;
+    align-items: flex-start;
+  }
+
   .hero { padding: 72px 0; }
 
   .section { padding: 64px 0; }
@@ -1199,6 +1245,8 @@ a, button, input, select, textarea, .card, .btn {
   }
 
   .process-step h3 { margin-bottom: 0.25rem; }
+
+  .hero-actions .btn { min-width: 0; width: 100%; }
 
   .cta-banner { padding: 64px 0; }
 
