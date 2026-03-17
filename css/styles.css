@@ -355,24 +355,26 @@ a {
   color: var(--color-muted);
 }
 
-.operation-card {
-  position: relative;
-  padding-top: 2.7rem;
+.card-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  background: rgba(200, 168, 75, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.9rem;
+  flex-shrink: 0;
 }
 
-.operation-icon {
-  position: absolute;
-  top: 0.95rem;
-  left: 1rem;
-  width: 1.45rem;
-  height: 1.45rem;
-  border-radius: 999px;
-  display: grid;
-  place-items: center;
-  background: rgba(200, 168, 75, 0.2);
-  color: var(--color-navy);
-  font-size: 0.72rem;
-  font-weight: 700;
+.card-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--color-navy);
+  stroke-width: 1.75;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .cta-banner {
@@ -758,14 +760,6 @@ a {
 
   .card p {
     font-size: 0.93rem;
-  }
-
-  .operation-card {
-    padding-top: 2.15rem;
-  }
-
-  .operation-icon {
-    top: 0.72rem;
   }
 
   .cta-banner {
