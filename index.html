@@ -275,7 +275,8 @@
             <h2>Supplier Inquiry</h2>
             <p>If you represent a manufacturer, distributor, or wholesale program, submit your information below and our team will review fit, documentation requirements, and onboarding potential.</p>
           </div>
-          <form action="#" method="post" class="contact-form">
+          <form name="supplier-inquiry" netlify method="POST" class="contact-form">
+            <input type="hidden" name="form-name" value="supplier-inquiry">
             <div class="form-grid">
               <div class="field-group">
                 <label for="company-name">Company Name</label>
