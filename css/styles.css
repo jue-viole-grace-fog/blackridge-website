@@ -567,37 +567,35 @@ a, button, input, select, textarea, .card, .btn {
 
 .category-editorial {
   display: grid;
-  grid-template-columns: 2fr 3fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
-  align-items: start;
 }
 
 .category-featured {
   background: var(--navy);
   border: 1px solid var(--border-dark);
   border-radius: var(--radius);
-  padding: 2.5rem;
-  height: 100%;
-  min-height: 340px;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  gap: 1rem;
   color: var(--white);
   transition: var(--transition);
 }
 
 .category-featured .card-icon {
   background: rgba(200, 168, 75, 0.15);
-  margin-bottom: 2rem;
+  margin-bottom: 0;
+  flex-shrink: 0;
 }
 
 .category-featured .card-icon svg { stroke: var(--gold); }
 
 .category-featured h3 {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--white);
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.25rem;
   letter-spacing: -0.01em;
 }
 
@@ -614,15 +612,6 @@ a, button, input, select, textarea, .card, .btn {
   transform: none;
 }
 
-.category-small-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
-.category-small-grid .card:last-child:nth-child(odd) {
-  grid-column: 1 / -1;
-}
 
 /* Standard category grid (about.html) */
 .category-grid { gap: 1rem; }
@@ -1140,16 +1129,11 @@ a, button, input, select, textarea, .card, .btn {
 
 @media (max-width: 1023px) {
   .category-editorial {
-    grid-template-columns: 1fr;
-  }
-
-  .category-small-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .category-featured {
-    min-height: 220px;
-    justify-content: flex-start;
+    min-height: unset;
   }
 }
 
@@ -1274,7 +1258,7 @@ a, button, input, select, textarea, .card, .btn {
     padding: 48px 0 32px;
   }
 
-  .category-small-grid { grid-template-columns: 1fr; }
+  .category-editorial { grid-template-columns: 1fr; }
 
   .section-heading { margin-bottom: 2rem; }
 }
