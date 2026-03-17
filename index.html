@@ -14,7 +14,7 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -56,6 +56,7 @@
 
   <main>
     <section class="hero hero-home">
+      <div class="hero-glow" aria-hidden="true"></div>
       <div class="container">
         <p class="eyebrow">Blackridge Ventures LLC &middot; Blackridge Supplies</p>
         <h1>Trusted U.S. Retail Partner for <span class="text-gold">Automotive &amp; Replacement Parts</span> Suppliers</h1>
@@ -105,37 +106,39 @@
           <h2>Product Categories</h2>
           <p>Focused categories aligned with supplier onboarding, listing quality, and marketplace distribution.</p>
         </div>
-        <div class="card-grid category-grid">
-          <article class="card category-card">
+        <div class="category-editorial">
+          <article class="category-featured">
             <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
             <h3>Automotive Parts &amp; Accessories</h3>
             <p>Coverage for maintenance, replacement, and performance-oriented automotive product lines.</p>
           </article>
-          <article class="card category-card">
-            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-            <h3>Home Appliance Parts</h3>
-            <p>Parts programs supporting appliance repair workflows and dependable replacement demand.</p>
-          </article>
-          <article class="card category-card">
-            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></div>
-            <h3>Outdoor Equipment Parts</h3>
-            <p>Replacement and service components for outdoor equipment categories and seasonal demand.</p>
-          </article>
-          <article class="card category-card">
-            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
-            <h3>Tools &amp; Repair Components</h3>
-            <p>Technical assortments for tool maintenance, repair use cases, and workshop channels.</p>
-          </article>
-          <article class="card category-card">
-            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg></div>
-            <h3>Lawn &amp; Garden Equipment Parts</h3>
-            <p>Supplier programs for equipment upkeep, replacement cycles, and service parts continuity.</p>
-          </article>
-          <article class="card category-card">
-            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div>
-            <h3>Aftermarket / OEM Replacement Components</h3>
-            <p>Balanced channel support for aftermarket and OEM replacement component distribution.</p>
-          </article>
+          <div class="category-small-grid">
+            <article class="card category-card">
+              <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+              <h3>Home Appliance Parts</h3>
+              <p>Parts programs supporting appliance repair workflows and dependable replacement demand.</p>
+            </article>
+            <article class="card category-card">
+              <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></div>
+              <h3>Outdoor Equipment Parts</h3>
+              <p>Replacement and service components for outdoor equipment categories and seasonal demand.</p>
+            </article>
+            <article class="card category-card">
+              <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+              <h3>Tools &amp; Repair Components</h3>
+              <p>Technical assortments for tool maintenance, repair use cases, and workshop channels.</p>
+            </article>
+            <article class="card category-card">
+              <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg></div>
+              <h3>Lawn &amp; Garden Equipment Parts</h3>
+              <p>Supplier programs for equipment upkeep, replacement cycles, and service parts continuity.</p>
+            </article>
+            <article class="card category-card">
+              <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div>
+              <h3>Aftermarket / OEM Replacement Components</h3>
+              <p>Balanced channel support for aftermarket and OEM replacement component distribution.</p>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -178,32 +181,41 @@
           <p class="section-tag">Supplier Value</p>
           <h2>Why Suppliers Work With Blackridge</h2>
         </div>
-        <div class="card-grid reason-grid">
-          <article class="card reason-card">
-            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
-            <h3>Structured Marketplace Operations</h3>
-            <p>We maintain organized product, listing, and channel workflows for supplier-friendly retail execution.</p>
-          </article>
-          <article class="card reason-card">
-            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-            <h3>MAP-Conscious Positioning</h3>
-            <p>We aim to support pricing integrity through disciplined marketplace practices.</p>
-          </article>
-          <article class="card reason-card">
-            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.99 1.17 2 2 0 013 .19h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8a16 16 0 006.09 6.09l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
-            <h3>Responsive U.S. Communication</h3>
-            <p>Supplier conversations, onboarding, and follow-up are handled through a direct business contact process.</p>
-          </article>
-          <article class="card reason-card">
-            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
-            <h3>Multi-Category Product Experience</h3>
-            <p>Our sourcing focus includes automotive, appliance, outdoor, and replacement parts categories.</p>
-          </article>
+        <div class="feature-rows">
+          <div class="feature-row">
+            <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+            <div class="feature-content">
+              <h3>Structured Marketplace Operations</h3>
+              <p>We maintain organized product, listing, and channel workflows for supplier-friendly retail execution.</p>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <div class="feature-content">
+              <h3>MAP-Conscious Positioning</h3>
+              <p>We aim to support pricing integrity through disciplined marketplace practices.</p>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.99 1.17 2 2 0 013 .19h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8a16 16 0 006.09 6.09l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+            <div class="feature-content">
+              <h3>Responsive U.S. Communication</h3>
+              <p>Supplier conversations, onboarding, and follow-up are handled through a direct business contact process.</p>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+            <div class="feature-content">
+              <h3>Multi-Category Product Experience</h3>
+              <p>Our sourcing focus includes automotive, appliance, outdoor, and replacement parts categories.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="cta-banner">
+      <div class="cta-decorative" aria-hidden="true">B2B</div>
       <div class="container cta-inner">
         <h2>Ready to review supplier fit with our team?</h2>
         <p>Share your company profile and product scope. We will follow up with onboarding requirements and next steps.</p>
