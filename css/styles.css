@@ -1354,6 +1354,18 @@ a, button, input, select, textarea, .card, .btn {
 
   .category-editorial { grid-template-columns: 1fr; }
 
+  .category-featured {
+    min-height: 0;
+    padding: 5.5rem 1.5rem 1.5rem;
+    justify-content: flex-start;
+    gap: 0.75rem;
+  }
+
+  .category-featured .card-icon {
+    top: 1.25rem;
+    left: 1.25rem;
+  }
+
   .section-heading { margin-bottom: 2rem; }
 }
 
@@ -1365,5 +1377,14 @@ a, button, input, select, textarea, .card, .btn {
   .trust-pills li {
     font-size: 0.6875rem;
     padding: 5px 10px;
+  }
+
+  .category-featured {
+    padding: 5.25rem 1.25rem 1.25rem;
+  }
+
+  .category-featured h3 {
+    font-size: 1rem;
+    line-height: 1.3;
   }
 }
