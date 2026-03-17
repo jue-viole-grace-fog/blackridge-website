@@ -175,6 +175,17 @@ a, button, input, select, textarea, .card, .btn {
   border-color: rgba(255, 255, 255, 0.35);
 }
 
+.btn-light-dark {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+
+.btn-light-dark:hover {
+  background: var(--surface);
+  border-color: #cbd5e1;
+}
+
 .btn[disabled] {
   opacity: 0.6;
   cursor: not-allowed;
@@ -996,6 +1007,23 @@ a, button, input, select, textarea, .card, .btn {
   line-height: 1.75;
 }
 
+.not-found-wrap {
+  text-align: center;
+}
+
+.not-found-panel {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.not-found-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.875rem;
+  flex-wrap: wrap;
+  margin-top: 1.75rem;
+}
+
 .narrow-content { max-width: 720px; }
 
 /* ============================================================
@@ -1247,6 +1275,8 @@ a, button, input, select, textarea, .card, .btn {
   .process-step h3 { margin-bottom: 0.25rem; }
 
   .hero-actions .btn { min-width: 0; width: 100%; }
+
+  .not-found-actions .btn { width: 100%; }
 
   .cta-banner { padding: 64px 0; }
 
