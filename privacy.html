@@ -61,7 +61,7 @@
     <section class="section">
       <div class="container">
         <div class="narrow-content">
-          <p class="lead-support"><strong>Effective Date:</strong> January 1, 2025</p>
+          <p class="lead-support"><strong>Effective January 1, 2025. Last updated 2026.</strong></p>
           <p class="lead-support" style="margin-bottom: 2rem;">This Privacy Policy describes how Blackridge Ventures LLC (&ldquo;Blackridge Supplies,&rdquo; &ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) collects, uses, and handles information submitted through this website. We are located at 7901 4th St N STE 300, St. Petersburg, FL 33702. For questions, contact us at <a href="mailto:purchasing@blackridgesupplies.com" style="color:var(--gold)">purchasing@blackridgesupplies.com</a>.</p>
 
           <h2 style="font-size:1.25rem;margin-bottom:0.5rem;">1. Information We Collect</h2>
@@ -115,7 +115,7 @@
     </div>
     <div class="footer-bottom">
       <div class="container footer-bottom-inner">
-        <span>&copy; 2025 Blackridge Ventures LLC &middot; Blackridge Supplies &middot; St. Petersburg, Florida &middot; All Rights Reserved</span>
+        <span>&copy; <span id="year"></span> Blackridge Ventures LLC &middot; Blackridge Supplies &middot; St. Petersburg, Florida &middot; All Rights Reserved</span>
         <span class="footer-legal-links">
           <a href="privacy.html">Privacy Policy</a>
           <a href="terms.html">Terms of Use</a>
@@ -123,6 +123,9 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
   <script>
     (function () {
       var header = document.querySelector(".site-header");
@@ -133,19 +136,25 @@
       function closeMenu() {
         toggle.setAttribute("aria-expanded", "false");
         toggle.setAttribute("aria-label", "Open navigation menu");
+        toggle.classList.remove("is-open");
         menu.classList.remove("is-open");
         menu.hidden = true;
       }
       function openMenu() {
         toggle.setAttribute("aria-expanded", "true");
         toggle.setAttribute("aria-label", "Close navigation menu");
+        toggle.classList.add("is-open");
         menu.hidden = false;
         requestAnimationFrame(function () { menu.classList.add("is-open"); });
       }
-      toggle.addEventListener("click", function () {
+      toggle.addEventListener("click", function (event) {
+        event.stopPropagation();
         if (toggle.getAttribute("aria-expanded") === "true") { closeMenu(); } else { openMenu(); }
       });
       menu.querySelectorAll("a").forEach(function (link) { link.addEventListener("click", closeMenu); });
+      document.addEventListener("click", function (event) {
+        if (toggle.getAttribute("aria-expanded") === "true" && !header.contains(event.target)) { closeMenu(); }
+      });
       document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeMenu(); });
       window.addEventListener("resize", function () { if (!window.matchMedia("(max-width: 768px)").matches) closeMenu(); });
     })();

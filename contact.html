@@ -198,7 +198,7 @@
     </div>
     <div class="footer-bottom">
       <div class="container footer-bottom-inner">
-        <span>&copy; 2025 Blackridge Ventures LLC &middot; Blackridge Supplies &middot; St. Petersburg, Florida &middot; All Rights Reserved</span>
+        <span>&copy; <span id="year"></span> Blackridge Ventures LLC &middot; Blackridge Supplies &middot; St. Petersburg, Florida &middot; All Rights Reserved</span>
         <span class="footer-legal-links">
           <a href="privacy.html">Privacy Policy</a>
           <a href="terms.html">Terms of Use</a>
@@ -206,6 +206,9 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
   <script>
     (function () {
       var forms = document.querySelectorAll(".contact-form");
@@ -242,6 +245,7 @@
       function closeMenu() {
         toggle.setAttribute("aria-expanded", "false");
         toggle.setAttribute("aria-label", "Open navigation menu");
+        toggle.classList.remove("is-open");
         menu.classList.remove("is-open");
         menu.hidden = true;
       }
@@ -249,13 +253,15 @@
       function openMenu() {
         toggle.setAttribute("aria-expanded", "true");
         toggle.setAttribute("aria-label", "Close navigation menu");
+        toggle.classList.add("is-open");
         menu.hidden = false;
         requestAnimationFrame(function () {
           menu.classList.add("is-open");
         });
       }
 
-      toggle.addEventListener("click", function () {
+      toggle.addEventListener("click", function (event) {
+        event.stopPropagation();
         var isExpanded = toggle.getAttribute("aria-expanded") === "true";
         if (isExpanded) {
           closeMenu();
@@ -266,6 +272,12 @@
 
       menu.querySelectorAll("a").forEach(function (link) {
         link.addEventListener("click", closeMenu);
+      });
+
+      document.addEventListener("click", function (event) {
+        if (toggle.getAttribute("aria-expanded") === "true" && !header.contains(event.target)) {
+          closeMenu();
+        }
       });
 
       document.addEventListener("keydown", function (event) {

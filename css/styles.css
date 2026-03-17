@@ -214,27 +214,50 @@ a, button, input, select, textarea, .card, .btn {
   width: 40px;
   height: 36px;
   padding: 0;
+  position: relative;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  gap: 4px;
   cursor: pointer;
+  z-index: 1001;
 }
 
 .mobile-nav-toggle span {
-  width: 16px;
-  height: 1.5px;
-  background: rgba(255, 255, 255, 0.7);
+  position: absolute;
+  left: 50%;
+  width: 24px;
+  height: 2px;
+  margin-left: -12px;
+  background: var(--white);
   border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease, top 0.2s ease;
+}
+
+.mobile-nav-toggle span:nth-child(1) { top: 11px; }
+.mobile-nav-toggle span:nth-child(2) { top: 17px; }
+.mobile-nav-toggle span:nth-child(3) { top: 23px; }
+
+.mobile-nav-toggle.is-open span:nth-child(1) {
+  top: 17px;
+  transform: rotate(45deg);
+}
+
+.mobile-nav-toggle.is-open span:nth-child(2) { opacity: 0; }
+
+.mobile-nav-toggle.is-open span:nth-child(3) {
+  top: 17px;
+  transform: rotate(-45deg);
 }
 
 .mobile-menu {
-  border-top: 1px solid var(--border-dark);
   background: var(--navy);
-  padding: 0.75rem 0 1rem;
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 0;
   opacity: 0;
   transform: translateY(-8px);
   transition: opacity 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.24);
+  z-index: 1000;
 }
 
 .mobile-menu.is-open {
@@ -255,15 +278,16 @@ a, button, input, select, textarea, .card, .btn {
   font-family: "DM Sans", system-ui, sans-serif;
   font-size: 0.9rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.6);
-  padding: 0.65rem 0.25rem;
+  color: rgba(255, 255, 255, 0.72);
+  padding: 16px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 .mobile-menu a:hover { color: var(--white); }
 
 .mobile-menu-cta {
-  width: 100%;
-  margin-top: 0.75rem;
+  margin: 16px 24px 18px;
+  width: calc(100% - 48px);
 }
 
 /* ============================================================
@@ -279,9 +303,9 @@ a, button, input, select, textarea, .card, .btn {
 .hero-home {
   min-height: 100vh;
   display: flex;
-  align-items: flex-start;
-  padding-top: 120px;
-  padding-bottom: 80px;
+  align-items: center;
+  padding-top: 64px;
+  padding-bottom: 32px;
   background:
     repeating-linear-gradient(
       45deg,
@@ -441,6 +465,14 @@ a, button, input, select, textarea, .card, .btn {
   border-bottom: 1px solid var(--border-dark);
 }
 
+@media (min-width: 769px) {
+  .stats-block {
+    margin-top: -32px;
+    position: relative;
+    z-index: 2;
+  }
+}
+
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -580,16 +612,18 @@ a, button, input, select, textarea, .card, .btn {
   display: grid;
   grid-template-columns: 2fr 3fr;
   gap: 1rem;
-  align-items: start;
+  align-items: stretch;
 }
 
 .category-featured {
-  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0F1E3A 0%, #1a2f50 100%);
   border: 1px solid var(--border-dark);
   border-radius: var(--radius);
   padding: 2.5rem;
   height: 100%;
-  min-height: 340px;
+  min-height: 280px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -597,23 +631,40 @@ a, button, input, select, textarea, .card, .btn {
   transition: var(--transition);
 }
 
+.category-featured::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 999px;
+  border: 1px solid rgba(200, 168, 75, 0.15);
+  top: -20px;
+  right: -20px;
+}
+
 .category-featured .card-icon {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
   background: rgba(200, 168, 75, 0.15);
-  margin-bottom: 2rem;
+  margin-bottom: 0;
 }
 
 .category-featured .card-icon svg { stroke: var(--gold); }
 
 .category-featured h3 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 700;
   color: var(--white);
-  margin-bottom: 0.6rem;
+  margin-bottom: 8px;
   letter-spacing: -0.01em;
 }
 
 .category-featured p {
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.65);
   font-size: 0.875rem;
   line-height: 1.65;
   margin-bottom: 0;
@@ -1198,7 +1249,16 @@ a, button, input, select, textarea, .card, .btn {
     display: none;
   }
 
-  .mobile-menu-wrap { display: block; }
+  .mobile-menu-wrap {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 100vw;
+    max-width: none;
+    transform: translateX(-50%);
+    z-index: 1000;
+  }
 
   .mobile-nav-toggle { display: inline-flex; }
 
